@@ -1,0 +1,12 @@
+# basic health check on reboot and backup of vcd / mes
+# 19jul25
+
+# When a reboot occurs, do the following.
+@reboot sleep 60 && /usr/local/bin/check-lxc-health.sh > /var/log/lxc-health-boot.log 2>&1
+
+# Daily LXC backup at 2 AM
+0 2 * * * /usr/local/bin/backup-lxc-containers.sh > /var/log/lxc-backup.log 2>&1
+
+# Weekly LXC maintenance on Sunday at 3 AM
+0 3 * * 0 /usr/local/bin/maintain-lxc-containers.sh > /var/log/lxc-maintenance.log 2>&1
+
