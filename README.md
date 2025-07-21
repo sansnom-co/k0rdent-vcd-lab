@@ -134,7 +134,7 @@ sudo systemctl status lxc-net
 sudo systemctl restart lxc-net
 ```
 
-For more detailed documentation, see the [full documentation](docs/FULL_DOCUMENTATION.md).
+For more detailed documentation, see the [full documentation](vdc-overview-readme.md).
 
 ---
 
